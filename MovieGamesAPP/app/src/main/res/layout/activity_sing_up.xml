@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/red"
+    android:backgroundTint="@color/red"
+    tools:context=".activitys.SingUpActivity">
+
+    <Button
+        android:id="@+id/buttonSingUp"
+        android:layout_width="280dp"
+        android:layout_height="76dp"
+        android:layout_marginBottom="74dp"
+        android:background="@drawable/button10new"
+        android:fontFamily="@font/mathletebulky"
+        android:text="REGISTRARSE"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextNameSU"
+        style="@style/TextInputStyle"
+        android:layout_width="280dp"
+        android:layout_height="76dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="Nombre"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitleSingUp" />
+
+    <EditText
+        android:id="@+id/editTextUsernameSU"
+        style="@style/TextInputStyle"
+        android:layout_width="280dp"
+        android:layout_height="76dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNameSU" />
+
+    <EditText
+        android:id="@+id/editTextPasswordSU"
+        style="@style/TextInputStyle"
+        android:layout_width="280dp"
+        android:layout_height="76dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextUsernameSU" />
+
+    <TextView
+        android:id="@+id/textViewTitleSingUp"
+        style="@style/TextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="CREAR CUENTA"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

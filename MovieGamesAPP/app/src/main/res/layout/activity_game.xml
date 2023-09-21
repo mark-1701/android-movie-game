@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/red"
+    tools:context=".activitys.GameActivity">
+
+    <EditText
+        android:id="@+id/editTextEmojisGame"
+        style="@style/TextInputStyle"
+        android:layout_width="280dp"
+        android:layout_height="76dp"
+        android:layout_marginTop="72dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="HOLA MUNDO"
+        android:inputType="text"
+        android:paddingLeft="0dp"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitleGame" />
+
+    <TextView
+        android:id="@+id/textViewTitleGame"
+        style="@style/TextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="PARTIDA GAME"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmojisGame">
+
+        <Button
+            android:id="@+id/buttonGame1"
+            style="@style/ButtonStyle"
+            android:layout_width="280dp"
+            android:layout_height="76dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/button7new"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="JURASSIC PARKJURASSIC PARKJURASSIC PARK"
+            android:textSize="34sp"
+            app:backgroundTint="@null" />
+
+        <Button
+            android:id="@+id/buttonGame2"
+            style="@style/ButtonStyle"
+            android:layout_width="280dp"
+            android:layout_height="76dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/button7new"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="Button"
+            android:textSize="34sp"
+            app:backgroundTint="@null" />
+
+        <Button
+            android:id="@+id/buttonGame3"
+            style="@style/ButtonStyle"
+            android:layout_width="280dp"
+            android:layout_height="76dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/button7new"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="Button"
+            android:textSize="34sp"
+            app:backgroundTint="@null" />
+
+        <Button
+            android:id="@+id/buttonGame4"
+            style="@style/ButtonStyle"
+            android:layout_width="280dp"
+            android:layout_height="76dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/button7new"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="Button"
+            android:textSize="34sp"
+            app:backgroundTint="@null" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

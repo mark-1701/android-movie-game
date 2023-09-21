@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/red"
+    tools:context=".activitys.AddRiddleActivity">
+
+    <EditText
+        android:id="@+id/editTextEmojisAddRiddle"
+        style="@style/TextInputStyle"
+        android:layout_width="280dp"
+        android:layout_height="76dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="Introduce emotes 😁"
+        android:inputType="text"
+        android:textColorHint="#3F51B5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitleAddRiddle" />
+
+    <EditText
+        android:id="@+id/editTextPCorrectAnswerAddRiddle"
+        style="@style/TextInputStyle"
+        android:layout_width="280dp"
+        android:layout_height="76dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="Introduce pista correcta"
+        android:inputType="text"
+        android:textColor="#FF0000"
+        android:textColorHint="#FF0000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmojisAddRiddle" />
+
+    <EditText
+        android:id="@+id/editTextP2AddRiddle"
+        style="@style/TextInputStyle"
+        android:layout_width="280dp"
+        android:layout_height="76dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="Introduce pista"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPCorrectAnswerAddRiddle" />
+
+    <EditText
+        android:id="@+id/editTextP3AddRiddle"
+        style="@style/TextInputStyle"
+        android:layout_width="280dp"
+        android:layout_height="76dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="Introduce pista"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextP2AddRiddle" />
+
+    <EditText
+        android:id="@+id/editTextP4AddRiddle"
+        style="@style/TextInputStyle"
+        android:layout_width="280dp"
+        android:layout_height="76dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="Introduce pista"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextP3AddRiddle" />
+
+    <Button
+        android:id="@+id/buttonContinueAddRiddle"
+        android:layout_width="280dp"
+        android:layout_height="76dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="74dp"
+        android:background="@drawable/button10new"
+        android:fontFamily="@font/mathletebulky"
+        android:text="AÑADIR"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextP4AddRiddle" />
+
+    <TextView
+        android:id="@+id/textViewTitleAddRiddle"
+        style="@style/TextViewStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="CREAR UN ACERTIJO"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
