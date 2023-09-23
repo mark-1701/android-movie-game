@@ -3,7 +3,7 @@ package com.example.moviegamesapp.model;
 import java.util.LinkedList;
 
 public class Riddle {
-    private int idRiddle;
+    private String riddleId;
     private String emojis;
     private String correctAnswer;
     private LinkedList<Clue> listClues;
@@ -11,19 +11,19 @@ public class Riddle {
     public Riddle() {
     }
 
-    public Riddle(int idRiddle, String emojis, String correctAnswer, LinkedList<Clue> listClues) {
-        this.idRiddle = idRiddle;
+    public Riddle(String riddleId, String emojis, String correctAnswer, LinkedList<Clue> listClues) {
+        this.riddleId = riddleId;
         this.emojis = emojis;
         this.correctAnswer = correctAnswer;
         this.listClues = listClues;
     }
 
-    public int getIdRiddle() {
-        return idRiddle;
+    public String getRiddleId() {
+        return riddleId;
     }
 
-    public void setIdRiddle(int idRiddle) {
-        this.idRiddle = idRiddle;
+    public void setRiddleId(String riddleId) {
+        this.riddleId = riddleId;
     }
 
     public String getEmojis() {
@@ -53,7 +53,7 @@ public class Riddle {
     @Override
     public String toString() {
         return "Riddle{" +
-                "idRiddle=" + idRiddle +
+                "riddleId=" + riddleId +
                 ", emojis='" + emojis + '\'' +
                 ", correctAnswer='" + correctAnswer + '\'' +
                 ", listClues=" + listClues +

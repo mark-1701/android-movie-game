@@ -10,13 +10,13 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.moviegamesapp.R;
-import com.example.moviegamesapp.database.DatabaseUserManager;
+import com.example.moviegamesapp.database.DatabaseUsersManager;
 
 public class SingUpActivity extends AppCompatActivity {
 
     private EditText editTextNameSU, editTextUsernameSU, editTextPasswordSU;
     private Button buttonSingUp;
-    private DatabaseUserManager databaseUserManager;
+    private DatabaseUsersManager databaseUsersManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,7 @@ public class SingUpActivity extends AppCompatActivity {
         editTextNameSU =  findViewById(R.id.editTextNameSU);
         editTextUsernameSU =  findViewById(R.id.editTextUsernameSU);
         editTextPasswordSU =  findViewById(R.id.editTextPasswordSU);
-        databaseUserManager = new DatabaseUserManager(this);
+        databaseUsersManager = new DatabaseUsersManager(this);
         buttonSingUp = findViewById(R.id.buttonSingUp);
 
         buttonSingUp.setOnClickListener(new View.OnClickListener() {
@@ -35,10 +35,15 @@ public class SingUpActivity extends AppCompatActivity {
                 String name = editTextNameSU.getText().toString();
                 String username = editTextUsernameSU.getText().toString();
                 String password = editTextPasswordSU.getText().toString();
-                databaseUserManager.insertUser(name, username, password);
-                databaseUserManager.readUsers();
-                Intent next = new Intent(SingUpActivity.this, MainActivity.class);
-                startActivity(next);
+
+                if (name.isEmpty() || username.isEmpty() || password.isEmpty()) {
+                    Toast.makeText(SingUpActivity.this, "Debes de llenar todos los campos", Toast.LENGTH_SHORT).show();
+                } else {
+                    databaseUsersManager.insertUser(name, username, password);
+                    databaseUsersManager.closeDatabase();
+                    Intent next = new Intent(SingUpActivity.this, MainActivity.class);
+                    startActivity(next);
+                }
             }
         });
     }

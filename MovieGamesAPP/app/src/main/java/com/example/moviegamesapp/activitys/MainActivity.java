@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
 import android.view.View;
@@ -13,12 +12,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.moviegamesapp.AddGameSingleton;
-import com.example.moviegamesapp.GameControllerSingleton;
-import com.example.moviegamesapp.GlobalSingleton;
+import com.example.moviegamesapp.singletonclasses.AddGameSingleton;
+import com.example.moviegamesapp.singletonclasses.GameControllerSingleton;
+import com.example.moviegamesapp.singletonclasses.GlobalSingleton;
 import com.example.moviegamesapp.R;
 import com.example.moviegamesapp.database.DatabaseAcess;
-import com.example.moviegamesapp.database.DatabaseUserManager;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
     GameControllerSingleton gameControllerSingleton;
     GlobalSingleton globalSingleton;
     AddGameSingleton addGameSingleton;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         //INSTANCIA INICIAL SINGLETON
         gameControllerSingleton = GameControllerSingleton.getInstance();
-        globalSingleton = GlobalSingleton.getInstance();
+        globalSingleton = GlobalSingleton.getInstance(this);
         addGameSingleton = AddGameSingleton.getInstancia();
 
         /*SUBRAYADO DE LOS TEXTVIEW DEL LOGIN*/
@@ -68,10 +65,16 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String username = editTextUsernameLogin.getText().toString();
                 String password = editTextPasswordLogin.getText().toString();
-                if (databaseAcess.searchInformation(username, password)) {
-                    Toast.makeText(MainActivity.this, "Bienvenido", Toast.LENGTH_SHORT).show();
-                    Intent next = new Intent(MainActivity.this,MenuActivity.class);
-                    startActivity(next);
+
+                if (username.isEmpty() || password.isEmpty()) {
+                    Toast.makeText(MainActivity.this, "Debes de llenar todos los campos", Toast.LENGTH_SHORT).show();
+                } else {
+                    if (databaseAcess.searchInformation(username, password)) {
+                        databaseAcess.closeDatabase();
+                        Toast.makeText(MainActivity.this, "Bienvenido", Toast.LENGTH_SHORT).show();
+                        Intent next = new Intent(MainActivity.this,MenuActivity.class);
+                        startActivity(next);
+                    }
                 }
             }
         });

@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.moviegamesapp.GameControllerSingleton;
+import com.example.moviegamesapp.singletonclasses.GameControllerSingleton;
 import com.example.moviegamesapp.R;
 
 public class ScoreActivity extends AppCompatActivity {

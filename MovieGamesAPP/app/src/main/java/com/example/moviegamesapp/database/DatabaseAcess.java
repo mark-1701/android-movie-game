@@ -7,27 +7,25 @@ import android.widget.Toast;
 
 import java.io.File;
 
-import javax.crypto.SecretKey;
-
 public class DatabaseAcess {
     private Context context;
-    private DatabaseHelper databaseHelper;
+    private DatabaseUsersHelper databaseUsersHelper;
     private SQLiteDatabase database;
     public DatabaseAcess(Context context) {
         this.context = context;
         //INSTANCIA SQLITE
-        databaseHelper = new DatabaseHelper(context);
-        database = databaseHelper.getWritableDatabase();
+        databaseUsersHelper = new DatabaseUsersHelper(context);
+        database = databaseUsersHelper.getWritableDatabase();
     }
 
     public boolean searchInformation(String username, String password) {
-        String[] projection = {DatabaseHelper.COLUMN_USERNAME, DatabaseHelper.COLUMN_PASSWORD};
-        String selection = DatabaseHelper.COLUMN_USERNAME + "= ?";
+        String[] projection = {DatabaseUsersHelper.COLUMN_USERNAME, DatabaseUsersHelper.COLUMN_PASSWORD};
+        String selection = DatabaseUsersHelper.COLUMN_USERNAME + "= ?";
         String[] selectionArgs = {username};
-        Cursor cursor = database.query(DatabaseHelper.TABLE_NAME, projection, selection, selectionArgs, null, null, null);
+        Cursor cursor = database.query(DatabaseUsersHelper.TABLE_NAME, projection, selection, selectionArgs, null, null, null);
         if (cursor.moveToFirst()) {
 
-            String passwordFound = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseHelper.COLUMN_PASSWORD));
+            String passwordFound = cursor.getString(cursor.getColumnIndexOrThrow(DatabaseUsersHelper.COLUMN_PASSWORD));
 
             if (password.equals(passwordFound)) {
                 cursor.close();
@@ -47,7 +45,7 @@ public class DatabaseAcess {
 
     //ELIMINAR LA BASE DE DATOS
     public void deleteDatabase() {
-        File databaseFile = context.getApplicationContext().getDatabasePath(DatabaseHelper.DATABASE_NAME);
+        File databaseFile = context.getApplicationContext().getDatabasePath(DatabaseUsersHelper.DATABASE_NAME);
         if (databaseFile.exists()) {
             try {
                 database.deleteDatabase(databaseFile);
@@ -58,5 +56,9 @@ public class DatabaseAcess {
         } else {
             // La base de datos no existe, no es necesario eliminarla
         }
+    }
+
+    public void closeDatabase() {
+        database.close();
     }
 }

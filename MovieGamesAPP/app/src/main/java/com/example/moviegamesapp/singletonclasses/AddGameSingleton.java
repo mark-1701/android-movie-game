@@ -1,21 +1,13 @@
-package com.example.moviegamesapp;
-
-import com.example.moviegamesapp.model.Game;
-import com.example.moviegamesapp.model.Riddle;
-
-import java.util.LinkedList;
+package com.example.moviegamesapp.singletonclasses;
 
 public class AddGameSingleton {
     private static AddGameSingleton instancia;
-    public static Game game;
+    public static String gameName;
     public static int numberOfRiddles;
-    public static LinkedList<Riddle> listRiddle;
-
 
     private AddGameSingleton() {
-        game = new Game();
+        gameName = "";
         numberOfRiddles = 0;
-        listRiddle = new LinkedList<>();
     }
 
     public static AddGameSingleton getInstancia() {
@@ -25,10 +17,7 @@ public class AddGameSingleton {
         return instancia;
     }
     public static void restartAddGame() {
-        game = new Game();
+        gameName = "";
         numberOfRiddles = 0;
-        listRiddle = new LinkedList<>();
     }
-
-
 }

@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/mathletebulky"
-        android:text="CINEMA GAME"
+        android:text="MOVIE GAMES"
         android:textColor="#EEFFFFFF"
         android:textSize="60sp"
         android:textStyle="bold"

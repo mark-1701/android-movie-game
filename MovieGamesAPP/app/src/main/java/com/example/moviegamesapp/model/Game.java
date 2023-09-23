@@ -3,33 +3,33 @@ package com.example.moviegamesapp.model;
 import java.util.LinkedList;
 
 public class Game {
-    private int idGame;
-    private String name;
+    private String gameName;
+    private boolean state;
     private LinkedList<Riddle> listRiddles;
 
     public Game() {
     }
 
-    public Game(int idGame, String name, LinkedList<Riddle> listRiddles) {
-        this.idGame = idGame;
-        this.name = name;
+    public Game(String gameName, boolean state, LinkedList<Riddle> listRiddles) {
+        this.gameName = gameName;
+        this.state = state;
         this.listRiddles = listRiddles;
     }
 
-    public int getIdGame() {
-        return idGame;
+    public String getGameName() {
+        return gameName;
     }
 
-    public void setIdGame(int idGame) {
-        this.idGame = idGame;
+    public void setGameName(String game_name) {
+        this.gameName = game_name;
     }
 
-    public String getName() {
-        return name;
+    public boolean isState() {
+        return state;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setState(boolean state) {
+        this.state = state;
     }
 
     public LinkedList<Riddle> getListRiddles() {
@@ -43,8 +43,8 @@ public class Game {
     @Override
     public String toString() {
         return "Game{" +
-                "idGame=" + idGame +
-                ", name='" + name + '\'' +
+                "gameName='" + gameName + '\'' +
+                ", state=" + state +
                 ", listRiddles=" + listRiddles +
                 '}';
     }

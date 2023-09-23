@@ -5,33 +5,30 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.moviegamesapp.GameControllerSingleton;
-import com.example.moviegamesapp.GlobalSingleton;
+import com.example.moviegamesapp.singletonclasses.GameControllerSingleton;
 import com.example.moviegamesapp.R;
 import com.example.moviegamesapp.activitys.GameActivity;
-import com.example.moviegamesapp.activitys.MainActivity;
 import com.example.moviegamesapp.activitys.MenuActivity;
-import com.example.moviegamesapp.activitys.SingUpActivity;
+import com.example.moviegamesapp.database.DatabaseGamesManager;
 
 import java.util.LinkedList;
-import java.util.List;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHOlder> {
     private LinkedList<Game> listGames;
     private Context context;
+    private DatabaseGamesManager databaseGamesManager;
 
     public CustomAdapter(LinkedList<Game> lista, Context con){
         this.listGames = lista;
         this.context = con;
+        databaseGamesManager = new DatabaseGamesManager(context);
     }
 
     @NonNull
@@ -54,7 +51,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHOlder
         buttonDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                GlobalSingleton.listGames.remove(position);
+                //GlobalSingleton.listGames.remove(position);
+                databaseGamesManager.disableGame(listGames.get(position).getGameName(), false);
                 Intent next = new Intent(holder.itemView.getContext(), MenuActivity.class);
                 holder.itemView.getContext().startActivity(next);
             }
@@ -64,14 +62,16 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHOlder
             @Override
             public void onClick(View v) {
                 //DESDE AQUI YA EMPIEZA EL JUEGO
+                //CARGA EL JUEGO
                 GameControllerSingleton.setGame(listGames.get(position));
+                //CARGA EL ACERTIJO
                 GameControllerSingleton.changeRiddle();
                 Intent next = new Intent(holder.itemView.getContext(), GameActivity.class);
                 holder.itemView.getContext().startActivity(next);
             }
         });
 
-        textViewName.setText(listGames.get(position).getName());
+        textViewName.setText(listGames.get(position).getGameName());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

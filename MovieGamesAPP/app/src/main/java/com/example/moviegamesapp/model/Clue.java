@@ -1,23 +1,23 @@
 package com.example.moviegamesapp.model;
 
 public class Clue {
-    private int idClue;
+    private int clueId;
     private String clue;
 
     public Clue() {
     }
 
-    public Clue(int idClue, String clue) {
-        this.idClue = idClue;
+    public Clue(int clueId, String clue) {
+        this.clueId = clueId;
         this.clue = clue;
     }
 
-    public int getIdClue() {
-        return idClue;
+    public int getClueId() {
+        return clueId;
     }
 
-    public void setIdClue(int idClue) {
-        this.idClue = idClue;
+    public void setClueId(int clueId) {
+        this.clueId = clueId;
     }
 
     public String getClue() {
@@ -31,7 +31,7 @@ public class Clue {
     @Override
     public String toString() {
         return "Clue{" +
-                "idClue=" + idClue +
+                "clueId=" + clueId +
                 ", clue='" + clue + '\'' +
                 '}';
     }

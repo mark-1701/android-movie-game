@@ -1,13 +1,7 @@
-package com.example.moviegamesapp;
+package com.example.moviegamesapp.singletonclasses;
 
-import android.content.Intent;
-
-import com.example.moviegamesapp.activitys.GameActivity;
-import com.example.moviegamesapp.activitys.ScoreActivity;
 import com.example.moviegamesapp.model.Game;
 import com.example.moviegamesapp.model.Riddle;
-
-import java.util.LinkedList;
 
 public class GameControllerSingleton {
     private static GameControllerSingleton instance;
