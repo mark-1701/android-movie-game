@@ -76,4 +76,10 @@ public class AddRiddleActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, "No es posible regresar", Toast.LENGTH_SHORT).show();
+    }
+
 }

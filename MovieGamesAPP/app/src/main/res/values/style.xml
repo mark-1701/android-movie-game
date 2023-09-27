@@ -22,4 +22,7 @@
         <item name="android:background">@drawable/button9new</item>
     </style>
 
+    <style name="ToolBarStyle" parent="Theme.AppCompat">
+    </style>
+
 </resources>

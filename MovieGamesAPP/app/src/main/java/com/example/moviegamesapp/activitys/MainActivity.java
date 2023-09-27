@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this, "Bienvenido", Toast.LENGTH_SHORT).show();
                         Intent next = new Intent(MainActivity.this,MenuActivity.class);
                         startActivity(next);
+//                        finish();
                     }
                 }
             }

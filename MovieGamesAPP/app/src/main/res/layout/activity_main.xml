@@ -12,7 +12,7 @@
         android:id="@+id/imageIcon"
         android:layout_width="165dp"
         android:layout_height="127dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="52dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -36,9 +36,9 @@
         android:id="@+id/textViewSingUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="56dp"
-        android:text="crear una cuenta"
-        android:textColor="#3D3D3C"
+        android:layout_marginBottom="42dp"
+        android:text="Crear cuenta con email"
+        android:textColor="@color/white"
         android:textSize="17dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -46,10 +46,11 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="52dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/buttonLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView">
@@ -68,22 +69,65 @@
             style="@style/TextInputStyle"
             android:layout_width="280dp"
             android:layout_height="76dp"
-            android:layout_marginTop="26dp"
+            android:layout_marginTop="32dp"
             android:ems="10"
             android:hint="Password"
             android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/buttonLogin"
+            style="@style/ButtonStyle"
+            android:layout_width="280dp"
+            android:layout_height="76dp"
+            android:layout_marginTop="32dp"
+            android:text="INICIAR SESIÓN"
+            app:backgroundTint="@null" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/buttonLogin"
-        style="@style/ButtonStyle"
-        android:layout_width="280dp"
-        android:layout_height="76dp"
-        android:layout_marginBottom="8dp"
-        android:text="INICIAR SESIÓN"
-        app:backgroundTint="@null"
-        app:layout_constraintBottom_toTopOf="@+id/textViewSingUp"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:background="@drawable/custom_button_white"
+            android:padding="3dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/twitter" />
+
+        <Space
+            android:layout_width="16dp"
+            android:layout_height="match_parent" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:background="@drawable/custom_button_white"
+            android:padding="3dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/facebook" />
+
+        <Space
+            android:layout_width="16dp"
+            android:layout_height="match_parent" />
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:background="@drawable/custom_button_white"
+            android:padding="3dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/google" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

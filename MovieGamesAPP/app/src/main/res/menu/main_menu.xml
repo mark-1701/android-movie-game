@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/layerLogout"
+        android:title="Capa 1"
+        android:icon = "@drawable/baseline_logout_24"
+        android:tint = "@color/white"
+        android:orderInCategory="30"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/layerLibrary"
+        android:title="Capa 2"
+        android:icon = "@drawable/baseline_menu_book_24"
+        android:tint = "@color/white"
+        android:orderInCategory="40"
+        app:showAsAction="ifRoom" />
+
+</menu>

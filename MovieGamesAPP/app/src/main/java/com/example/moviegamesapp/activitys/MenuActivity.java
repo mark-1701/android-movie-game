@@ -7,8 +7,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.moviegamesapp.R;
 import com.example.moviegamesapp.database.DatabaseGamesManager;
@@ -25,6 +28,7 @@ public class MenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+
         buttonAddGameMenu = findViewById(R.id.buttonAddGameMenu);
         recyclerView = findViewById(R.id.recyclerViewList);
         recyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
@@ -49,5 +53,10 @@ public class MenuActivity extends AppCompatActivity {
                 startActivity(next);
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, "No es posible regresar", Toast.LENGTH_SHORT).show();
     }
 }

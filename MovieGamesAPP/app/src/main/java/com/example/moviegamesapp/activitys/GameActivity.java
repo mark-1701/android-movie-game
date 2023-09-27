@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.moviegamesapp.singletonclasses.GameControllerSingleton;
 import com.example.moviegamesapp.R;
@@ -116,5 +117,10 @@ public class GameActivity extends AppCompatActivity {
             Intent next = new Intent(GameActivity.this, GameActivity.class);
             startActivity(next);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, "No es posible regresar", Toast.LENGTH_SHORT).show();
     }
 }
