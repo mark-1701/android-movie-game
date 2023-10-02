@@ -87,7 +87,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHOlder
         return listGames.size();
     }
 
-    public class ViewHOlder extends RecyclerView.ViewHolder {
+    public static class ViewHOlder extends RecyclerView.ViewHolder {
         public CardView cardView;
 
         public ViewHOlder(CardView cardView) {

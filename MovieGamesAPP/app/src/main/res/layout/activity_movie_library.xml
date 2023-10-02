@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/red"
-    tools:context=".activitys.MenuActivity">
+    tools:context=".activitys.MovieLibrary">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -23,7 +23,7 @@
             style="@style/TextViewStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="PARTIDAS"
+            android:text="API themoviedb"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -37,47 +37,61 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageButton
-                android:id="@+id/imageButtonLogoutMenu"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:layout_marginRight="16dp"
-                android:background="@color/red"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/baseline_logout_24" />
-
-            <ImageButton
                 android:id="@+id/imageButtonBackMovieLibrary"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:background="@color/red"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/baseline_menu_book_24" />
+                app:srcCompat="@drawable/baseline_arrow_back_24" />
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewList"
+        android:id="@+id/recyclerViewListLibrary"
         android:layout_width="0dp"
-        android:layout_height="500dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
-    <Button
-        android:id="@+id/buttonAddGameMenu"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="24dp"
-        android:background="@drawable/custom_button"
-        android:text="+"
-        android:textSize="24sp"
-        app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <EditText
+            android:id="@+id/editTextSearchMovieLibrary"
+            style="@style/TextInputStyle"
+            android:layout_width="241dp"
+            android:layout_height="76dp"
+            android:ems="10"
+            android:hint="Buscar película"
+            android:inputType="text"
+            app:layout_constraintEnd_toStartOf="@+id/buttonSearchMovie"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/buttonSearchMovie"
+            android:layout_width="76dp"
+            android:layout_height="76dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_search1"
+            android:text=""
+            app:backgroundTint="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

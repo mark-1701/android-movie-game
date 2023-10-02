@@ -78,16 +78,13 @@
 
     <Button
         android:id="@+id/buttonContinueAddRiddle"
+        style="@style/ButtonStyle"
         android:layout_width="280dp"
         android:layout_height="76dp"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="74dp"
-        android:background="@drawable/button10new"
-        android:fontFamily="@font/mathletebulky"
         android:text="AÑADIR"
         android:textColor="@color/white"
-        android:textSize="34sp"
-        android:textStyle="bold"
         app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -9,7 +9,7 @@ public class GameControllerSingleton {
     private static Riddle riddle;
     private static int level = 0;
     private static int limitLevel = 0;
-    private static int score = 0;
+    private static double score = 0;
 
     private GameControllerSingleton() {
         //INICIALIZACION DE VARIABLES
@@ -39,7 +39,10 @@ public class GameControllerSingleton {
 
     //CALIFICAR EL ACERTIJO
     public static void validateRiddle(String clue) {
-         if (riddle.getCorrectAnswer().equalsIgnoreCase(clue)) score+=25;
+        if (riddle.getCorrectAnswer().equalsIgnoreCase(clue)) {
+            //VA A SUMAR EL 100% DIVIDIDO EL TAMANIO DE LA LISTA PARA CALCULAR EL VALOR DE CADA RESPUESTA CORRECTA
+            score += 100.0 / limitLevel;
+        }
     }
 
     //REINICIAR VARIABLES DEL JUEGO
@@ -86,11 +89,11 @@ public class GameControllerSingleton {
         GameControllerSingleton.limitLevel = limitLevel;
     }
 
-    public static int getScore() {
+    public static double getScore() {
         return score;
     }
 
-    public static void setScore(int score) {
+    public static void setScore(double score) {
         GameControllerSingleton.score = score;
     }
 }

@@ -12,7 +12,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="76dp"
-        android:background="@drawable/button9new">
+        android:background="@drawable/button1">
 
         <LinearLayout
             android:layout_width="0dp"

@@ -14,8 +14,8 @@ import com.example.moviegamesapp.R;
 import com.example.moviegamesapp.database.DatabaseGamesManager;
 
 public class AddGameActivity extends AppCompatActivity {
-    EditText editTextNameRiddleAddGame, editTextNumberRiddleAddGame;
-    Button buttonContinueAddGame;
+    private EditText editTextNameRiddleAddGame, editTextNumberRiddleAddGame;
+    private Button buttonContinueAddGame;
     private DatabaseGamesManager databaseGamesManager;
 
     @Override

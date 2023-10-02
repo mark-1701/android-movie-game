@@ -4,28 +4,28 @@ import android.content.Context;
 
 import com.example.moviegamesapp.database.DatabaseGamesManager;
 import com.example.moviegamesapp.model.Game;
+import com.example.moviegamesapp.model.Movie;
 
 import java.util.LinkedList;
 
 public class GlobalSingleton {
     private static GlobalSingleton instance;
-    public static LinkedList<Game> listGames;
     private DatabaseGamesManager databaseGamesManager;
+    public static String userName = "null";
+    public static LinkedList<Movie> listMovies;
 
     private GlobalSingleton(Context context) {
-        listGames = new LinkedList<>();
         databaseGamesManager = new DatabaseGamesManager(context);
+        listMovies = new LinkedList<>();
 
-        /*
-        String newRiddleId = databaseGamesManager.generateRandomNumbers();
-        databaseGamesManager.insertGame("quantin extremo3", true);
-        databaseGamesManager.insertRiddle(newRiddleId, "quantin extremo3", "🤖🌌👶🚀", "2001 Odisea en el Espacio");
-        databaseGamesManager.insertClues(newRiddleId, "Jurassic Park");
-        databaseGamesManager.insertClues(newRiddleId, "El Padrino");
-        databaseGamesManager.insertClues(newRiddleId, "2001 Odisea en el Espacio");
-        databaseGamesManager.insertClues(newRiddleId, "Matrix");
 
-         */
+//        String newRiddleId = databaseGamesManager.generateRandomNumbers();
+//        databaseGamesManager.insertGame("quantin extremo3", true);
+//        databaseGamesManager.insertRiddle(newRiddleId, "quantin extremo3", "🤖🌌👶🚀", "2001 Odisea en el Espacio");
+//        databaseGamesManager.insertClues(newRiddleId, "Jurassic Park");
+//        databaseGamesManager.insertClues(newRiddleId, "El Padrino");
+//        databaseGamesManager.insertClues(newRiddleId, "2001 Odisea en el Espacio");
+//        databaseGamesManager.insertClues(newRiddleId, "Matrix");
 
 
         //LinkedList<Clue> listClues = databaseGamesManager.listClues(newRiddleId);
@@ -51,14 +51,6 @@ public class GlobalSingleton {
             instance = new GlobalSingleton(context);
         }
         return instance;
-    }
-
-    public static LinkedList<Game> getListGames() {
-        return listGames;
-    }
-
-    public static void setListGames(LinkedList<Game> listGames) {
-        GlobalSingleton.listGames = listGames;
     }
 }
 

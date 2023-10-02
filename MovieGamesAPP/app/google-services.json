@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "42271407619",
+    "project_id": "appmoviegame",
+    "storage_bucket": "appmoviegame.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:42271407619:android:6a0d62231fb6ddd4de9836",
+        "android_client_info": {
+          "package_name": "com.example.moviegamesapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "42271407619-d0jha873f8o2j0j9rvvrljqjokcc12h8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.moviegamesapp",
+            "certificate_hash": "c2249ee08490d2b7b5f58638306bd54fa4ab148b"
+          }
+        },
+        {
+          "client_id": "42271407619-stv8iv3fqnu7frq2uulb6is1900lmrmh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMwdpkF5lPrMGet78x79tXEMplptc_d8s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "42271407619-stv8iv3fqnu7frq2uulb6is1900lmrmh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
