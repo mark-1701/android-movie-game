@@ -57,7 +57,7 @@ public class MovieLibrary extends AppCompatActivity {
         customAdapterMovieList = new CustomAdapterMovieList(GlobalSingleton.listMovies, this);
         recyclerViewLibrary.setAdapter(customAdapterMovieList);
 
-        getListTheMoviedb(0, null);
+        if (GlobalSingleton.listMovies.isEmpty()) getListTheMoviedb(0, null);
 
         buttonMovieLibrary.setOnClickListener(new View.OnClickListener() {
             @Override
