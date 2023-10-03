@@ -63,4 +63,9 @@ public class ScoreActivity extends AppCompatActivity {
             Toast.makeText(this, er.getMessage(), Toast.LENGTH_SHORT).show();
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, "No es posible regresar", Toast.LENGTH_SHORT).show();
+    }
 }
