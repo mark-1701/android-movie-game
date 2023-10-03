@@ -16,11 +16,11 @@ import com.example.moviegamesapp.R;
 import java.util.LinkedList;
 
 public class CustomAdapterMovieList extends RecyclerView.Adapter<CustomAdapter.ViewHOlder>{
-    private LinkedList<Movie> listMovies;
+    private LinkedList<Movie> movieList;
     private Context context;
 
-    public CustomAdapterMovieList(LinkedList<Movie> listMovies, Context context) {
-        this.listMovies = listMovies;
+    public CustomAdapterMovieList(LinkedList<Movie> movieList, Context context) {
+        this.movieList = movieList;
         this.context = context;
     }
 
@@ -37,17 +37,17 @@ public class CustomAdapterMovieList extends RecyclerView.Adapter<CustomAdapter.V
         TextView textViewYear = holder.cardView.findViewById(R.id.textViewYearCardItem);
         TextView textViewDescription = holder.cardView.findViewById(R.id.textViewDescriptionCardItem);
         ImageView imageView = holder.cardView.findViewById(R.id.imageViewCardItem);
-        textViewTitle.setText(listMovies.get(position).getTitle());
-        textViewYear.setText(listMovies.get(position).getDate());
-        textViewDescription.setText(listMovies.get(position).getDescription());
+        textViewTitle.setText(movieList.get(position).getTitle());
+        textViewYear.setText(movieList.get(position).getDate());
+        textViewDescription.setText(movieList.get(position).getDescription());
         Glide.with(context)
-                .load(listMovies.get(position).getImage())
+                .load(movieList.get(position).getImage())
                 .into(imageView);
     }
 
     @Override
     public int getItemCount() {
-        return listMovies.size();
+        return movieList.size();
     }
 
     public class ViewHOlder extends RecyclerView.ViewHolder {

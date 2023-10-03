@@ -20,7 +20,6 @@ public class AddRiddleActivity extends AppCompatActivity {
 
     private Button buttonContinueAddRiddle;
     private EditText editTextEmojisAddRiddle, editTextPCorrectAnswerAddRiddle, editTextP2AddRiddle, editTextP3AddRiddle, editTextP4AddRiddle;
-    private LinkedList<Clue> listClues;
     private DatabaseGamesManager databaseGamesManager;
 
     @Override
@@ -33,7 +32,6 @@ public class AddRiddleActivity extends AppCompatActivity {
         editTextP2AddRiddle = findViewById(R.id.editTextP2AddRiddle);
         editTextP3AddRiddle = findViewById(R.id.editTextP3AddRiddle);
         editTextP4AddRiddle = findViewById(R.id.editTextP4AddRiddle);
-        listClues = new LinkedList<>();
 
         //INSTANCIA AL MANEJADOR DE LA BASE DE DATOS DE PARTIDAS
         databaseGamesManager = new DatabaseGamesManager(this);

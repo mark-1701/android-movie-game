@@ -22,7 +22,7 @@ public class MenuActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private CustomAdapter customAdapter;
     private Button buttonAddGameMenu;
-    private ImageButton imageButtonLogoutMenu, imageButtonMovieLibraryMenu;
+    private ImageButton imageButtonLogoutMenu, imageButtonMovieLibraryMenu, imageButtonRealTimeMenu;
     private DatabaseGamesManager databaseGamesManager;
 
     @Override
@@ -32,7 +32,8 @@ public class MenuActivity extends AppCompatActivity {
 
         buttonAddGameMenu = findViewById(R.id.buttonAddGameMenu);
         imageButtonLogoutMenu = findViewById(R.id.imageButtonLogoutMenu);
-        imageButtonMovieLibraryMenu = findViewById(R.id.imageButtonBackMovieLibrary);
+        imageButtonMovieLibraryMenu = findViewById(R.id.imageButtonBackRealTimeDatabase);
+        imageButtonRealTimeMenu = findViewById(R.id.imageButtonRealTimeMenu);
         recyclerView = findViewById(R.id.recyclerViewList);
         recyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
 
@@ -62,6 +63,14 @@ public class MenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent next = new Intent(MenuActivity.this,MovieLibrary.class);
+                startActivity(next);
+            }
+        });
+
+        imageButtonRealTimeMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent next = new Intent(MenuActivity.this,RealTimeDatabase.class);
                 startActivity(next);
             }
         });

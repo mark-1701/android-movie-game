@@ -12,11 +12,11 @@ public class GlobalSingleton {
     private static GlobalSingleton instance;
     private DatabaseGamesManager databaseGamesManager;
     public static String userName = "null";
-    public static LinkedList<Movie> listMovies;
+    public static LinkedList<Movie> movieList;
 
     private GlobalSingleton(Context context) {
         databaseGamesManager = new DatabaseGamesManager(context);
-        listMovies = new LinkedList<>();
+        movieList = new LinkedList<>();
 
 
 //        String newRiddleId = databaseGamesManager.generateRandomNumbers();

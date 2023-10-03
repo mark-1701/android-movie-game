@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textViewTitleMovieLibrary"
+            android:id="@+id/textViewTitleRealTimeDatabase"
             style="@style/TextViewStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -40,13 +40,23 @@
                 android:id="@+id/imageButtonLogoutMenu"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:layout_marginRight="16dp"
+                android:layout_marginRight="14dp"
                 android:background="@color/red"
                 android:scaleType="fitCenter"
                 app:srcCompat="@drawable/baseline_logout_24" />
 
             <ImageButton
-                android:id="@+id/imageButtonBackMovieLibrary"
+                android:id="@+id/imageButtonRealTimeMenu"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginRight="14dp"
+                android:layout_weight="1"
+                android:background="@color/red"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/realtime" />
+
+            <ImageButton
+                android:id="@+id/imageButtonBackRealTimeDatabase"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:background="@color/red"

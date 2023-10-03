@@ -29,7 +29,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.Map;
 
 public class MovieLibrary extends AppCompatActivity {
@@ -47,22 +46,22 @@ public class MovieLibrary extends AppCompatActivity {
 
         editTextMovieLibrary = findViewById(R.id.editTextSearchMovieLibrary);
         buttonMovieLibrary = findViewById(R.id.buttonSearchMovie);
-        buttonBackMovieLibrary = findViewById(R.id.imageButtonBackMovieLibrary);
+        buttonBackMovieLibrary = findViewById(R.id.imageButtonBackRealTimeDatabase);
         recyclerViewLibrary = findViewById(R.id.recyclerViewListLibrary);
         recyclerViewLibrary.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
 
         LinearLayoutManager linearLayoutManger = new LinearLayoutManager(this);
         recyclerViewLibrary.setLayoutManager(linearLayoutManger);
 
-        customAdapterMovieList = new CustomAdapterMovieList(GlobalSingleton.listMovies, this);
+        customAdapterMovieList = new CustomAdapterMovieList(GlobalSingleton.movieList, this);
         recyclerViewLibrary.setAdapter(customAdapterMovieList);
 
-        if (GlobalSingleton.listMovies.isEmpty()) getListTheMoviedb(0, null);
+        if (GlobalSingleton.movieList.isEmpty()) getListTheMoviedb(0, null);
 
         buttonMovieLibrary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                GlobalSingleton.listMovies.clear();
+                GlobalSingleton.movieList.clear();
 
                 if (editTextMovieLibrary.getText().toString().trim().isEmpty()) {
                     getListTheMoviedb(0, null);
@@ -109,7 +108,7 @@ public class MovieLibrary extends AppCompatActivity {
                                     String descripton = pokemon.getString("overview");
                                     String image = pokemon.getString("poster_path");
                                     Movie movie = new Movie(title, date, descripton, "https://image.tmdb.org/t/p/w500" + image);
-                                    GlobalSingleton.listMovies.add(movie);
+                                    GlobalSingleton.movieList.add(movie);
                                 }
                                 customAdapterMovieList.notifyDataSetChanged();
 

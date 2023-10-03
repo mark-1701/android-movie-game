@@ -41,7 +41,7 @@ public class GameActivity extends AppCompatActivity {
         GameControllerSingleton.getInstance();
         Game game = GameControllerSingleton.getGame();
         Riddle riddle = GameControllerSingleton.getRiddle();
-        LinkedList<Clue> listClues = riddle.getListClues();
+        LinkedList<Clue> cluesList = riddle.getListClues();
 
         //DESORDENAR LA LISTA PARA QUE NO SE IMPRIMAN CON EL MISMO ORDEN
 
@@ -53,11 +53,11 @@ public class GameActivity extends AppCompatActivity {
         //  - el tamanio de la lista por ejemplo seria 5, y el numero random seria entre 0 a 4, justamente coincide con las posiciones disponibles
 
         Random random = new Random();
-        LinkedList<Clue> unorderedClueList = listClues;
-        int clueListSize = listClues.size();
+        LinkedList<Clue> unorderedClueList = cluesList;
+        int clueListSize = cluesList.size();
 
         for (int i = 0; i < clueListSize; i++) {
-            unorderedClueList.add(listClues.remove(random.nextInt(listClues.size())));
+            unorderedClueList.add(cluesList.remove(random.nextInt(cluesList.size())));
         }
 
         Clue clue1 = unorderedClueList.get(0);
